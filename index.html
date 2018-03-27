@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Physic Guessing Game</title>
+</head>
+<body>
+        <h1>Welcome to the physic guessing game!</h1>
+        <div id="Title">Try to guess the number I choose between 0 and 10...</div>
+        <br>
+        <p id="stats"></p>
+    
+</body>
+<script>
+
+    // set the variables
+
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 5;
+    var guessesSoFar = " ";
+
+   
+    
+    
+    //begin the function
+
+
+    document.onkeyup = function(event) {
+
+        var compChoice = Math.floor(Math.random() * 10);
+        console.log(compChoice);
+
+        var userGuess = parseInt(event.key);
+       
+        console.log(userGuess);
+            if (userGuess == compChoice) {
+                wins++;
+                console.log(wins);
+            }
+                else if (userGuess !== compChoice) {
+                   
+                    guessesLeft--;
+                    guessesSoFar = userGuess;
+                }
+                    else if (guessesLeft === 0) {
+                        losses++;
+                        guessesLeft = 5;
+                        guessesSoFar = " ";
+                    }
+
+             
+    var html =
+          "<div>Wins: " + wins + "</div>" +
+          "<div>Losses: " + losses + "</div>" +
+          "<div>Guesses Left: " + guessesLeft + "</div>" +
+          "<div>Guesses So Far: " + guessesSoFar + "</div>";
+         
+          document.querySelector("#stats").innerHTML = html;
+
+
+            
+    };
+
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+create div #s for the screen 
+    <div id="wins"></div>
+    <div id="losses"></div>
+    <div id="guessesLeft"></div>
+    <div id="guessesSoFar"></div>
+
+    var wins = 0
+    var losses = 0
+    var guessesLeft = 10
+    var guessesSoFar = ""
+
+-----------------------------------------------------------
+
+    computer chooses a random number
+        store in a var
+
+    user chooses a letter from keyboard
+        store in a ver guess?
+
+    compare the computerchoice to the userchoice
+
+        funtion() maybe?
+            
+            if  letters are equal
+                alert "correct"
+                wins++
+                .innerhtml
+                    wins + 1
+                    losses = losses
+                    guessesleft = 9
+                    guessessofar = "" 
+ 
+            if letters are not equal
+                .innerhtml
+                    wins = wins
+                    losses = losses
+                    guessesleft--
+                    guesses so far = var "guessesSoFar"
+
+            if var guessesleft < 1
+                 .innerhtml
+                    wins = wins
+                    losses + 1
+                    guessleft 9
+                    guessessofar ""
+
+-->
+
+                
